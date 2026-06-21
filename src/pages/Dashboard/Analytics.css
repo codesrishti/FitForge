@@ -1,0 +1,216 @@
+.analytics-content {
+  padding-bottom: var(--spacing-xl);
+}
+
+.analytics-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--spacing-lg);
+  gap: var(--spacing-md);
+}
+
+.timeframe-selector {
+  display: flex;
+  padding: 4px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.selector-btn {
+  padding: 8px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  color: var(--on-surface-variant);
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+
+.selector-btn:hover {
+  color: var(--white);
+}
+
+.active-selector {
+  background-color: var(--surface-container-highest);
+  color: var(--white);
+}
+
+/* Metrics Row */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.metric-card {
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-lbl {
+  font-size: 11px;
+  color: var(--on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-xs);
+}
+
+.metric-val {
+  font-family: var(--font-headline);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.metric-trend {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.metric-trend.green {
+  color: #4caf50;
+}
+
+.metric-trend.red {
+  color: #ffb4ab;
+}
+
+.metric-trend.neutral {
+  color: var(--on-surface-variant);
+}
+
+/* Charts Grid */
+.charts-grid-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.chart-card {
+  padding: var(--spacing-lg);
+}
+
+.bar-chart-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 200px;
+  padding-top: var(--spacing-md);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: var(--spacing-sm);
+}
+
+.chart-bar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40px;
+  position: relative;
+}
+
+.bar-column {
+  width: 24px;
+  height: 140px;
+  background-color: var(--surface-container-high);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.bar-fill-orange {
+  background-color: var(--accent-orange);
+  width: 100%;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  box-shadow: 0 0 10px rgba(255, 107, 0, 0.4);
+  transition: height 0.5s ease-out;
+}
+
+.bar-fill-gray {
+  background-color: var(--primary);
+  width: 100%;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  transition: height 0.5s ease-out;
+}
+
+.bar-label {
+  font-size: 11px;
+  color: var(--on-surface-variant);
+  margin-top: var(--spacing-xs);
+  white-space: nowrap;
+}
+
+.bar-tooltip {
+  position: absolute;
+  top: -24px;
+  background-color: var(--surface-container-highest);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--white);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.chart-bar-wrapper:hover .bar-tooltip {
+  opacity: 1;
+}
+
+/* Insights Panel */
+.insights-panel {
+  padding: var(--spacing-lg);
+}
+
+.insights-desc {
+  font-size: 14px;
+  color: var(--on-surface-variant);
+  line-height: 22px;
+  margin-bottom: var(--spacing-md);
+}
+
+.insights-actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .charts-grid-row {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+}
+
+@media (max-width: 576px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .analytics-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timeframe-selector {
+    width: 100%;
+  }
+
+  .selector-btn {
+    flex-grow: 1;
+    text-align: center;
+  }
+}

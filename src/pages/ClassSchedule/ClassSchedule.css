@@ -1,0 +1,425 @@
+.schedule-page {
+  padding-top: 120px;
+  min-height: 100vh;
+}
+
+.schedule-main {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--spacing-gutter);
+}
+
+.schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--spacing-lg);
+  gap: var(--spacing-md);
+}
+
+.schedule-title {
+  font-family: var(--font-headline);
+  font-size: 48px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: var(--spacing-xs);
+}
+
+.schedule-subtitle {
+  font-size: 16px;
+  color: var(--on-surface-variant);
+  max-width: 600px;
+  line-height: 24px;
+}
+
+.category-tabs {
+  display: flex;
+  padding: 4px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.category-tab-btn {
+  padding: 8px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  color: var(--on-surface-variant);
+  transition: all 0.2s ease-in-out;
+}
+
+.category-tab-btn:hover {
+  color: var(--white);
+}
+
+.active-cat-tab {
+  background-color: var(--surface-container-highest);
+  color: var(--white);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Weekly Calendar Grid */
+.calendar-container {
+  overflow: hidden;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: 80px repeat(7, 1fr);
+}
+
+.calendar-headers {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: var(--surface-container-high);
+}
+
+.header-cell {
+  padding: var(--spacing-sm) var(--spacing-xs);
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.time-header {
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--on-surface-variant);
+}
+
+.day-header {
+  min-width: 120px;
+}
+
+.day-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--on-surface-variant);
+  letter-spacing: 0.08em;
+}
+
+.day-date {
+  font-family: var(--font-headline);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  margin-top: 2px;
+}
+
+.highlight-day {
+  background-color: rgba(255, 107, 0, 0.05);
+}
+
+.orange-text {
+  color: var(--accent-orange) !important;
+}
+
+.dim-text {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Time slots rows */
+.calendar-body {
+  overflow-y: auto;
+  max-height: 600px;
+}
+
+.time-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  min-height: 160px;
+}
+
+.time-cell {
+  padding-top: var(--spacing-sm);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--on-surface-variant);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.calendar-cell {
+  padding: 6px;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.01);
+  min-width: 120px;
+}
+
+.highlight-cell {
+  background-color: rgba(255, 107, 0, 0.01);
+}
+
+.class-card {
+  height: 100%;
+  padding: var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.class-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-orange);
+}
+
+.accent-border-left {
+  border-left: 4px solid var(--accent-orange) !important;
+  border-radius: 4px var(--radius-lg) var(--radius-lg) 4px;
+}
+
+.class-tag {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  margin-bottom: 6px;
+  display: inline-block;
+  letter-spacing: 0.05em;
+}
+
+.tag-hiit {
+  background-color: rgba(255, 107, 0, 0.1);
+  color: var(--accent-orange);
+}
+
+.tag-strength {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--white);
+}
+
+.tag-yoga {
+  background-color: rgba(202, 198, 195, 0.1);
+  color: #cac6c3;
+}
+
+.class-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 2px;
+}
+
+.class-coach {
+  font-size: 11px;
+  color: var(--on-surface-variant);
+}
+
+.join-class-btn {
+  align-self: flex-start;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--accent-orange);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: gap 0.2s;
+  text-transform: uppercase;
+}
+
+.join-class-btn:hover {
+  gap: 8px;
+}
+
+.join-class-btn span.arrow {
+  font-size: 12px;
+}
+
+/* Featured schedule section */
+.featured-schedule-section {
+  margin-top: var(--spacing-xl);
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+.featured-coach-visual {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.featured-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, var(--background) 100%);
+  z-index: 1;
+}
+
+.featured-coach-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-coach-info {
+  position: absolute;
+  bottom: var(--spacing-md);
+  left: var(--spacing-md);
+  z-index: 10;
+}
+
+.coach-tag {
+  color: var(--accent-orange);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 2px;
+  display: block;
+}
+
+.coach-name {
+  font-family: var(--font-headline);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.featured-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.masterclass-details {
+  padding: var(--spacing-lg);
+}
+
+.border-orange-left {
+  border-left: 4px solid var(--accent-orange);
+  border-radius: 4px var(--radius-xl) var(--radius-xl) 4px;
+}
+
+.masterclass-title {
+  font-family: var(--font-headline);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.masterclass-desc {
+  font-size: 15px;
+  color: var(--on-surface-variant);
+  line-height: 24px;
+  margin-bottom: var(--spacing-md);
+}
+
+.masterclass-meta {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.meta-item span.material-symbols-outlined {
+  color: var(--accent-orange);
+  font-size: 18px;
+}
+
+.book-masterclass-btn {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  padding: 8px 24px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  margin-left: auto;
+}
+
+.book-masterclass-btn:hover {
+  background-color: var(--white);
+  color: var(--background);
+}
+
+.features-subgrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+}
+
+.feature-small-card {
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.orange-icon {
+  color: var(--accent-orange);
+  font-size: 28px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.feature-small-title {
+  font-family: var(--font-headline);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 2px;
+}
+
+.feature-small-desc {
+  font-size: 12px;
+  color: var(--on-surface-variant);
+  line-height: 18px;
+}
+
+/* Responsive Table Calendar */
+@media (max-width: 1100px) {
+  .schedule-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .category-tabs {
+    width: 100%;
+  }
+
+  .category-tab-btn {
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .calendar-container {
+    overflow-x: auto;
+  }
+
+  .schedule-grid {
+    grid-template-columns: 80px repeat(7, 160px);
+    width: fit-content;
+  }
+
+  .featured-schedule-section {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-coach-visual {
+    aspect-ratio: 16/9;
+  }
+}
