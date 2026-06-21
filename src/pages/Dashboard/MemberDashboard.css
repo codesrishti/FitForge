@@ -16,6 +16,7 @@
   font-weight: 800;
   text-transform: uppercase;
   color: var(--white);
+  margin: 15px;
 }
 
 .orange-gradient-text {
